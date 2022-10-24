@@ -15,7 +15,9 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish:'$(Build.ArtifactStagingDirectory)/PWWebChina_${{·parameters.BUILD_VERSION·}}.zip'
-    ArtifactName: 'product'
+    targetPath: '$(Pipeline.ArtifactStagingDirectory)'
+    artifact: 'TestState'
+    publishLocation: 'pipeline'
+    
