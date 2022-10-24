@@ -17,7 +17,7 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'PipelinesDemo\bin\Release'
+    SourceFolder: 'Pipelines/bin/Release'
     Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)'
     
