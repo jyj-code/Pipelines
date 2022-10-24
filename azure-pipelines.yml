@@ -15,8 +15,14 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'PipelinesDemo\bin\Release'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Pipelines_${{·parameters.BUILD_VERSION·}}.zip'
-    ArtifactName: 'testDemo'
-    publishLocation: 'Container'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'FilePath'
