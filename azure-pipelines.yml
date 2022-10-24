@@ -22,5 +22,5 @@ steps:
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Pipelines_${{parameters.BUILD_VERSION}}.zip'
     ArtifactName: 'drop'
