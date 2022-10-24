@@ -17,6 +17,6 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/PWWebChina_${{·parameters.BUILD_VERSION·}}.zip'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Pipelines_${{·parameters.BUILD_VERSION·}}.zip'
     ArtifactName: 'testDemo'
     publishLocation: 'Container'
