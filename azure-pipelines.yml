@@ -4,14 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- main
+- main  #触发代码仓库main分支
 
+#要使用 Azure Pipelines 构建代码，至少需要一个代理。默认使用 Microsoft 托管的代理。
 pool:
   vmImage: ubuntu-latest
-
+#变量定义
 variables:
   buildConfiguration: 'Release'
-
+#执行步骤
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
