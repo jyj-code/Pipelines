@@ -42,15 +42,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/bin/$(buildConfiguration)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-- task: IISWebAppManagementOnMachineGroup@0
-  inputs:
-    EnableIIS: true
-    IISDeploymentType: 'IISWebApplication'
-    ParentWebsiteNameForApplication: 'http://localhost:10/'
-    VirtualPathForApplication: '/Application'
-    PhysicalPathForApplication: '%SystemDrive%\inetpub\wwwroot'
-    CreateOrUpdateAppPoolForApplication: true
-    AppPoolNameForApplication: 'Pipelines_app'
-    DotNetVersionForApplication: 'No Managed Code'
-    PipeLineModeForApplication: 'Integrated'
-    AppPoolIdentityForApplication: 'ApplicationPoolIdentity'
