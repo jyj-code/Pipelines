@@ -2,10 +2,13 @@
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
+#推送分支触发
 trigger:
 - main  #触发代码仓库main分支
 
+#拉取分支触发
+pr:
+- main  #触发代码仓库main分支
 #要使用 Azure Pipelines 构建代码，至少需要一个代理。默认使用 Microsoft 托管的代理。
 #使用多个版本生成 可以在多个平台上生成和测试项目。 这样做的一种方法是使用 strategy 和 matrix。 可以使用变量方便地将数据放入管道的各个部分。 在本示例中，我们将使用变量传入要使用的映像的名称。
 
