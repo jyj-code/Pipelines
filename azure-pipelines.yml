@@ -47,7 +47,7 @@ steps:
     EnableIIS: true
     IISDeploymentType: 'IISWebApplication'
     ParentWebsiteNameForApplication: 'http://localhost:10/'
-    VirtualPathForApplication: 'http://localhost:10/'
+    VirtualPathForApplication: '/Application'
     PhysicalPathForApplication: '%SystemDrive%\inetpub\wwwroot'
     CreateOrUpdateAppPoolForApplication: true
     AppPoolNameForApplication: 'Pipelines_app'
